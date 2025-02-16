@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Layout con Cálculo de Promedio</title>
+  <link rel="stylesheet" media="all" href="style.css" />
+  <style>
+    #apartados-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 5px;
+      border: 2px solid black;
+      background-color: #f0f0f0;
+      width: 90%;
+      margin: 10px auto;
+    }
+    #apartados {
+      display: flex;
+      gap: 15px;
+    }
+    .apartado {
+      padding: 5px;
+      background: white;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+    .promedio {
+      font-size: 16px;
+      font-weight: bold;
+      margin-top: 5px;
+      text-align: center;
+      color: #fff;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 5px;
+      border-radius: 5px;
+      display: none; /* Oculto por defecto */
+      position: absolute;
+      bottom: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .el {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 200px;
+      height: 100px;
+      margin: 20px auto;
+      background: #333;
+      padding: 10px;
+      border-radius: 10px;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+    .el:hover .promedio {
+      display: block; /* Se muestra al pasar el cursor */
+    }
+  </style>
+</head>
+<body>
+<div class="cont s--inactive">
+  <div class="cont__inner">
+    <div style="display: flex; flex-direction: column; align-items: center; height: 100vh; text-align: center;">
+      <!-- Apartados dentro de un recuadro en la parte superior -->
+      <div id="apartados-container">
+        <div id="apartados">
+          <!-- Generar 5 apartados -->
+          <script>
+            for (let i = 1; i <= 5; i++) {
+              document.write(`
+                <div class="apartado">
+                  <h3>Apartado ${i}</h3>
+                  <div>
+                    <button onclick="agregarCalificacion(7)">7</button>
+                    <button onclick="agregarCalificacion(8)">8</button>
+                    <button onclick="agregarCalificacion(9)">9</button>
+                    <button onclick="agregarCalificacion(10)">10</button>
+                  </div>
+                </div>
+              `);
+            }
+          </script>
+        </div>
+      </div>
+      
+     <!-- Sección 3 centrada -->
+     <div class="el">
+          <h2>Calificación de:</h2>
+          <div class="promedio" id="resultadoPromedio">0.0</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  let calificaciones = [];
+
+  function agregarCalificacion(valor) {
+    if (calificaciones.length < 5) {
+      calificaciones.push(valor);
+    } else {
+      calificaciones.shift();
+      calificaciones.push(valor);
+    }
+    actualizarPromedio();
+  }
+
+  function actualizarPromedio() {
+    let promedio = calificaciones.reduce((a, b) => a + b, 0) / 5;
+    document.getElementById("resultadoPromedio").textContent = promedio.toFixed(2);
+  }
+</script>
+</body>
+</html>
