@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resultado de Evaluación</title>
+  <style>
+    /* Estilos generales */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #1e3c72, #2a5298);
+      color: white;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: rgba(0, 0, 0, 0.8);
+      padding: 20px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+      animation: fadeInDown 1s;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .el {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 10px;
+      margin: 30px auto;
+      width: 300px;
+      text-align: center;
+      color: white;
+      position: relative;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .promedio {
+      font-size: 30px;
+      font-weight: bold;
+      margin: 10px 0;
+      color: #ffcc00;
+    }
+    footer {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            animation: fadeInUp 1s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Resultado de Evaluación</h1>
+    <nav>
+      <ul>
+          <li><a href="index.html">Principal</a></li>
+          <li><a href="agregar_equipo.html">Agregar Equipo</a></li>
+          <li><a href="agregar_evaluador.html">Agregar Evaluadores</a></li>
+          <li><a href="evaluar.html">Evaluar</a></li>
+      </ul>
+  </nav>
+  </header>
+
+  <div class="el">
+    <h2>Calificación Final:</h2>
+    <div class="promedio" id="resultadoPromedio"></div>
+  </div>
+
+  <script>
+    // Obtener el promedio desde localStorage y mostrarlo en el HTML
+    const promedio = localStorage.getItem("promedio");
+    if (promedio) {
+      document.getElementById("resultadoPromedio").textContent = promedio;
+    } else {
+      document.getElementById("resultadoPromedio").textContent = "No disponible";
+    }
+  </script>
+</body>
+<footer>
+  <p>&copy; 2025 Sistema de Evaluación</p>
+</footer>
+</html>

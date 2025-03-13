@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluadores Registrados</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            color: white;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            overflow-x: hidden;
+        }
+        header {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+            animation: fadeInDown 1s;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out;
+        }
+        nav ul li a:hover {
+            color: #ffcc00;
+        }
+        main {
+            padding: 50px;
+            animation: fadeIn 1.5s;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            width: 300px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+            margin: 10px;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        button {
+            background-color: #ffcc00;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 1rem;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background-color: #e6b800;
+        }
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            animation: fadeInUp 1s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        /* Estilos Responsivos */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .card {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Evaluadores Registrados</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Principal</a></li>
+                <li><a href="agregar_equipo.html">Agregar Equipo</a></li>
+                <li><a href="agregar_evaluador.html">Agregar Evaluadores</a></li>
+                <li><a href="evaluar.html">Evaluar</a></li>
+            </ul>
+        </nav>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Listado de Evaluadores</h2>
+            <p>A continuación se muestra el listado de evaluadores registrados. Puedes eliminarlos si es necesario.</p>
+        </section>
+        <div class="container">
+            <!-- Aquí se listan los evaluadores registrados -->
+            <div class="card">
+                <h3>Evaluador 1</h3>
+                <p>Evaluador especializado en equipos de fútbol.</p>
+                <button onclick="eliminarEvaluador('Evaluador 1')">Eliminar</button>
+            </div>
+            <div class="card">
+                <h3>Evaluador 2</h3>
+                <p>Evaluador especializado en equipos de baloncesto.</p>
+                <button onclick="eliminarEvaluador('Evaluador 2')">Eliminar</button>
+            </div>
+            <div class="card">
+                <h3>Evaluador 3</h3>
+                <p>Evaluador especializado en equipos de atletismo.</p>
+                <button onclick="eliminarEvaluador('Evaluador 3')">Eliminar</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Sistema de Evaluación</p>
+    </footer>
+
+    <script>
+        // Función para eliminar el evaluador
+        function eliminarEvaluador(nombreEvaluador) {
+            if (confirm('¿Estás seguro de eliminar a ' + nombreEvaluador + '?')) {
+                alert('El evaluador ' + nombreEvaluador + ' ha sido eliminado.');
+                // Aquí puedes agregar la lógica para eliminar al evaluador de la base de datos o realizar una llamada a la API para hacerlo.
+            }
+        }
+    </script>
+</body>
+</html>
