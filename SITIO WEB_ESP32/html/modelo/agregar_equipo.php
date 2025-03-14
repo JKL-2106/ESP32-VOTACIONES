@@ -1,24 +1,18 @@
 <?php
-// Conexión a la base de datos
 include 'conexion.php';
 
-// Verificar si el formulario fue enviado
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Obtener los datos del formulario
-    $nombre_equipo = $_POST['nombre_equipo'];
+    $nombre = $_POST['nombre_equipo'];
 
-    // Preparar la consulta SQL para insertar el equipo en la base de datos
-    $sql = "INSERT INTO equipos (nombre) VALUES ('$nombre_equipo')";
+    // Insertar evaluador en la base de datos
+    $sql = "INSERT INTO evaluadores (nombre, cargo) VALUES ('$nombre')";
 
-    // Ejecutar la consulta
     if ($conn->query($sql) === TRUE) {
-        // Si se inserta correctamente, redirigir a la página de ver registros
-        header('Location: ver_registros.php');
+        echo "Evaluador agregado correctamente.";
     } else {
-        echo "Error: " . $conn->error;
+        echo "Error: " . $sql . "<br>" . $conn->error;
     }
-
-    // Cerrar la conexión
-    $conn->close();
 }
+
+$conn->close();
 ?>

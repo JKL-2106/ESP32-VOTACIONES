@@ -30,70 +30,8 @@
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 2px;
-        /* Estilos del formulario para agregar evaluador */
-    #formulario-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-      margin: 20px auto;
-      width: 80%;
-      border-radius: 10px;
-      background-color: rgba(0, 0, 0, 0.5);
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-    }
-
-    .formulario {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      width: 300px;
-      text-align: center;
-    }
-
-    .formulario input {
-      padding: 10px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-      font-size: 1rem;
-      background-color: white;
-      transition: border 0.3s ease;
-    }
-
-    .formulario input:focus {
-      border-color: #ffcc00;
-    }
-
-    .formulario button {
-      background-color: #ffcc00;
-      border: none;
-      padding: 12px 20px;
-      cursor: pointer;
-      font-size: 1.2rem;
-      border-radius: 5px;
-      transition: background-color 0.3s ease-in-out;
-    }
-
-    .formulario button:hover {
-      background-color: #e6b800;
-    }
-
-    /* Estilo para el botón de guardar */
-    .send_btn {
-      background-color: #ffcc00;
-      border: none;
-      padding: 10px 20px;
-      cursor: pointer;
-      font-size: 1.2rem;
-      border-radius: 5px;
-      transition: background-color 0.3s ease-in-out;
-    }
-
-    .send_btn:hover {
-      background-color: #e6b800;
-    }
         }
-        h2 {
+            h2 {
             font-size: 2rem;
             font-weight: bold;
             color: #e6b800;
@@ -129,19 +67,6 @@
             padding: 30px;
             animation: fadeIn 1.5s;
         }
-        .intro-box {
-            background-color: #b3d9ff; /* Azul claro */
-            padding: 20px;
-            border-radius: 10px;
-            max-width: 80%;
-            margin: auto;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        .intro-box p {
-            text-align: justify;
-            margin: 0;
-            color: #004080; /* Azul más oscuro para mejor lectura */
-        }
         .container {
             display: flex;
             flex-wrap: wrap;
@@ -163,19 +88,100 @@
         .card:hover {
             transform: scale(1.05);
         }
-        button {
-            background-color: #e6b800;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            font-size: 1.2rem;
-            border-radius: 5px;
-            color: white;
-            transition: background 0.3s;
+         /* Animaciones */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    /* Estilos del formulario para agregar evaluador */
+    #formulario-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
         }
-        button:hover {
-            background-color: #0673D0;
-        }
+        @keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-30px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+    from { opacity: 0; transform: translateX(30px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Aplicando animaciones */
+.card {
+    animation: slideInLeft 1s ease-in-out;
+}
+
+.formulario {
+    animation: slideInRight 1s ease-in-out;
+}
+
+h2 {
+    animation: fadeInUp 1s ease-in-out;
+}
+
+
+    .formulario {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 300px;
+      text-align: center;
+    }
+
+    .formulario input {
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      background-color: white;
+      transition: border 0.3s ease;
+    }
+
+    .formulario input:focus {
+      border-color: #ffcc00;
+    }
+
+    .formulario button {
+      background-color: #ffcc00;
+      border: none;
+      padding: 12px 20px;
+      cursor: pointer;
+      font-size: 1.2rem;
+      border-radius: 5px;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    .formulario button:hover {
+      background-color: #e6b800;
+    }
+    /* Estilo para el botón de guardar */
+    .send_btn {
+      background-color: #ffcc00;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 1.2rem;
+      border-radius: 5px;
+      transition: background-color 0.3s ease-in-out;
+    }
+    .send_btn:hover {
+      background-color: #e6b800;
+    }
+   
         footer {
             background: linear-gradient(rgba(6, 83, 207, 0.8), rgba(27, 100, 219, 0.8)),
                         url('https://i.pinimg.com/736x/93/b7/13/93b7130c24ef54a2d04958536c9498b0.jpg');
@@ -188,6 +194,7 @@
             bottom: 0;
             text-align: center;
         }
+        
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -206,19 +213,47 @@
             </ul>
         </nav>
     </header>
-    <main>
-        
-        <div class="container">
-            <div id="formulario-container">
+    <div class="cont s--inactive">
+        <div class="cont__inner">
+          <div style="display: flex; flex-direction: column; align-items: center; height: 100vh; text-align: center;">
+            <div class="container">
             <div class="card">
+            <div id="formulario-container">
+            <div class="formulario">
             <h2>Ingrese los datos del equipo</h2>
-            <button type="submit">Registrar Equipo</button>
-            <input type="text" name="nombre_equipo" placeholder="Nombre del equipo" required>
-            <form action="agregar_equipo.php" method="POST"> 
+            <input type="text" id="nombre_equipo" placeholder="Nombre del equipo" required>
+            <button class="send_btn" onclick="guardarEquipo()">Guardar Equipo</button>
         </div>
-    </main>
+    </div>
+</div>
+</div>
+<script>
+    function guardarEquipo() {
+      let nombre = document.getElementById("nombre_equipo").value;
+
+      if (nombre) {
+        let formData = new FormData();
+        formData.append("nombre", nombre);
+
+        fetch("agregar_equipo.php", {
+          method: "POST",
+          body: formData
+        })
+        .then(response => response.text())
+        .then(data => {
+          alert(data);
+        })
+        .catch(error => {
+          console.error("Error:", error);
+        });
+      } else {
+        alert("Por favor, complete ambos campos.");
+      }
+    }
+  </script> 
     <footer>
         <p>&copy; 2025 Sistema de Evaluación</p>
     </footer>
 </body>
-</html>
+</html> 
+   
