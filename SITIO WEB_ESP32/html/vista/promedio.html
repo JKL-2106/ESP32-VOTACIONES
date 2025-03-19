@@ -78,7 +78,7 @@
         .intro-box p {
             text-align: justify;
             margin: 0;
-            color: #004080; /* Azul más oscuro para mejor lectura */
+            color: #004080; /* Azul más oscuro para mejor lectura */ 
         }
         @keyframes animacionCirculo {
     0% {
@@ -105,7 +105,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     text-align: center;
     transition: transform 0.3s ease-in-out;
     color: #ffcc00;
@@ -113,6 +113,37 @@
     margin: 40px auto;
     overflow: hidden;
     animation: animacionCirculo 1s ease-in-out; /* Aplica la animación */
+    position: relative;
+}
+
+.el::before,
+.el::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    border: 5px solid rgba(6, 83, 207, 0.5);
+    width: 120%;
+    height: 120%;
+    animation: ripple 2s infinite;
+}
+
+.el::before {
+    animation-delay: 0s;
+}
+
+.el::after {
+    animation-delay: 1s;
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
 }
 
 .imagen {
@@ -129,10 +160,11 @@
 }
 
 .promedio {
-    font-size: 30px;
+    font-size: 60px; /* Tamaño más grande para la calificación */
     font-weight: bold;
     color: #ffcc00;
     margin-top: 10px;
+    z-index: 1;
 }
 
     /* RECUADRO DE PROMEDIO */
@@ -166,9 +198,8 @@
       </ul>
   </nav>
   </header>
-
+  
   <div class="el">
-    <img src="ruta_de_tu_imagen.jpg" alt="Imagen" class="imagen">
     <p class="calificacion"></p>
     <div class="promedio" id="resultadoPromedio"></div>
   </div>
