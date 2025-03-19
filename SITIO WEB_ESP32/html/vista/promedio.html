@@ -7,183 +7,176 @@
   <style>
     /* Estilos generales */
     body {
-            font-family: 'Poppins', sans-serif;
-            font-size: 18px;
-            background: linear-gradient(to right, #fbfbfb, #fbfbfb);
-            color: rgb(21, 139, 230);
-            margin: 0;
-            padding: 0;
-            text-align: center;
-            overflow-x: hidden;
-        }
-        header {
-            background: linear-gradient(rgba(6, 83, 207, 0.8), rgba(27, 100, 219, 0.8)),
-                        url('https://i.pinimg.com/736x/93/b7/13/93b7130c24ef54a2d04958536c9498b0.jpg');
-            color: white;
-            background-size: cover;
-            background-position: center;
-            padding: 15px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
-        }
-        h1 {
-            font-size: 2.5rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-        h2 {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #e6b800;
-        }
-        p {
-            font-size: 1.2rem;
-            line-height: 1.6;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-        nav ul li {
-            display: inline;
-        }
-        nav ul li a {
-            background-color: #e6b800;
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            padding: 10px 20px;
-            border-radius: 5px;
-            display: inline-block;
-            transition: background 0.3s;
-        }
-        nav ul li a:hover {
-            background-color: #0673D0;
-        }
-        main {
-            padding: 30px;
-            animation: fadeIn 1.5s;
-        }
-        .intro-box {
-            background-color: #b3d9ff; /* Azul claro */
-            padding: 20px;
-            border-radius: 10px;
-            max-width: 80%;
-            margin: auto;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        .intro-box p {
-            text-align: justify;
-            margin: 0;
-            color: #004080; /* Azul más oscuro para mejor lectura */ 
-        }
-        @keyframes animacionCirculo {
-    0% {
-        transform: scale(0); /* Comienza desde un tamaño pequeño */
-        opacity: 0; /* Invisible */
+      font-family: 'Poppins', sans-serif;
+      font-size: 18px;
+      background: url('https://images.unsplash.com/photo-1561571994-3c61c554181a?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Zm9uZG8lMjBkZSUyMHZlcmFub3xlbnwwfHwwfHx8MA%3D%3D') no-repeat center center fixed;
+      background-size: cover; /* Cubre toda la pantalla */
+      color: rgb(21, 139, 230);
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      overflow-x: hidden;
     }
-    50% {
-        transform: scale(1.1); /* Se agranda un poco */
-        opacity: 1; /* Totalmente visible */
+    header {
+      background: linear-gradient(rgba(6, 83, 207, 0.8), rgba(27, 100, 219, 0.8)),
+                  url('https://i.pinimg.com/736x/93/b7/13/93b7130c24ef54a2d04958536c9498b0.jpg');
+      color: white;
+      background-size: cover;
+      background-position: center;
+      padding: 15px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
     }
-    100% {
-        transform: scale(1); /* Vuelve a su tamaño original */
-        opacity: 1; /* Totalmente visible */
+    h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
     }
-}
+    h2 {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #e6b800;
+    }
+    p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+    nav ul li {
+      display: inline;
+    }
+    nav ul li a {
+      background-color: #e6b800;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 10px 20px;
+      border-radius: 5px;
+      display: inline-block;
+      transition: background 0.3s;
+    }
+    nav ul li a:hover {
+      background-color: #0673D0;
+    }
+    main {
+      padding: 30px;
+      animation: fadeIn 1.5s;
+    }
+    .intro-box {
+      background-color: #b3d9ff; /* Azul claro */
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 80%;
+      margin: auto;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .intro-box p {
+      text-align: justify;
+      margin: 0;
+      color: #004080; /* Azul más oscuro para mejor lectura */
+    }
 
-.el {
-    background: rgba(6, 83, 207, 0.8);
-    padding: 20px;
-    border-radius: 50%;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-    width: 350px;
-    height: 350px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    transition: transform 0.3s ease-in-out;
-    color: #ffcc00;
-    font-size: 1.2rem;
-    margin: 40px auto;
-    overflow: hidden;
-    animation: animacionCirculo 1s ease-in-out; /* Aplica la animación */
-    position: relative;
-}
-
-.el::before,
-.el::after {
-    content: '';
-    position: absolute;
-    border-radius: 50%;
-    border: 5px solid rgba(6, 83, 207, 0.5);
-    width: 120%;
-    height: 120%;
-    animation: ripple 2s infinite;
-}
-
-.el::before {
-    animation-delay: 0s;
-}
-
-.el::after {
-    animation-delay: 1s;
-}
-
-@keyframes ripple {
-    0% {
+    /* Animación para los círculos */
+    @keyframes aparecer {
+      0% {
         transform: scale(0);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(1);
         opacity: 0;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
     }
-}
 
-.imagen {
-    width: 100%;
-    height: auto;
-    max-height: 100px;
-    object-fit: cover;
-}
+    /* Contenedor principal del círculo */
+    .el {
+      background: rgba(6, 83, 207, 0.8); /* Azul base */
+      padding: 20px;
+      border-radius: 50%;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+      width: 450px;
+      height: 450px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      transition: transform 0.3s ease-in-out;
+      color: #ffcc00;
+      font-size: 1.2rem;
+      margin: 40px auto;
+      overflow: hidden;
+      position: relative;
+      animation: aparecer 0.5s ease-in-out forwards; /* Animación para el círculo exterior */
+    }
 
-.calificacion {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-top: 10px;
-}
+    /* Primer círculo concéntrico */
+    .el .circulo-1 {
+      background: rgba(0, 71, 171, 0.9); /* Azul más fuerte */
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      animation: aparecer 0.5s ease-in-out 0.5s forwards; /* Retraso de 0.5s */
+      transform: scale(0); /* Inicia invisible */
+      opacity: 0;
+    }
 
-.promedio {
-    font-size: 60px; /* Tamaño más grande para la calificación */
-    font-weight: bold;
-    color: #ffcc00;
-    margin-top: 10px;
-    z-index: 1;
-}
+    /* Segundo círculo concéntrico */
+    .el .circulo-2 {
+      background: rgba(0, 50, 150, 1); /* Azul aún más fuerte */
+      width: 90%;
+      height: 90%;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: aparecer 0.5s ease-in-out 1s forwards; /* Retraso de 1s */
+      transform: scale(0); /* Inicia invisible */
+      opacity: 0;
+    }
+
+    /* Estilo para la calificación */
+    .promedio {
+      font-size: 150px; /* Tamaño más grande para la calificación */
+      font-weight: bold;
+      color: #ffcc00;
+      z-index: 1;
+      animation: aparecer 0.5s ease-in-out 1.5s forwards; /* Retraso de 1.5s */
+      transform: scale(0); /* Inicia invisible */
+      opacity: 0;
+      text-shadow: 
+        -4px -4px 0 #000,  
+         4px -4px 0 #000,
+        -4px  4px 0 #000,
+         4px  4px 0 #000; /* Contorno negro */
+    }
 
     /* RECUADRO DE PROMEDIO */
     footer {
-            background: linear-gradient(rgba(6, 83, 207, 0.8), rgba(27, 100, 219, 0.8)),
-                        url('https://i.pinimg.com/736x/93/b7/13/93b7130c24ef54a2d04958536c9498b0.jpg');
-            color: white;
-            background-size: cover;
-            background-position: center;
-            padding: 10px;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-            text-align: center;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
+      background: linear-gradient(rgba(6, 83, 207, 0.8), rgba(27, 100, 219, 0.8)),
+                  url('https://i.pinimg.com/736x/93/b7/13/93b7130c24ef54a2d04958536c9498b0.jpg');
+      color: white;
+      background-size: cover;
+      background-position: center;
+      padding: 10px;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+      text-align: center;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
   </style>
 </head>
 <body>
@@ -191,19 +184,22 @@
     <h1>Resultado de Evaluación</h1>
     <nav>
       <ul>
-          <li><a href="index.html">Principal</a></li>
-          <li><a href="agregar_equipo.html">Agregar Equipo</a></li>
-          <li><a href="agregar_evaluador.html">Agregar Evaluadores</a></li>
-          <li><a href="evaluar.html">Evaluar</a></li>
+        <li><a href="index.html">Principal</a></li>
+        <li><a href="agregar_equipo.html">Agregar Equipo</a></li>
+        <li><a href="agregar_evaluador.html">Agregar Evaluadores</a></li>
+        <li><a href="evaluar.html">Evaluar</a></li>
       </ul>
-  </nav>
+    </nav>
   </header>
-  
-  <div class="el">
-    <p class="calificacion"></p>
-    <div class="promedio" id="resultadoPromedio"></div>
-  </div>
 
+  <div class="el">
+    <div class="circulo-1">
+      <div class="circulo-2">
+        <div class="promedio" id="resultadoPromedio"></div>
+      </div>
+    </div>
+  </div>
+  <br> <br> <br>
   <script>
     // Obtener el promedio desde localStorage y mostrarlo en el HTML
     const promedio = localStorage.getItem("promedio");
